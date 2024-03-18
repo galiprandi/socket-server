@@ -1,9 +1,11 @@
 import fp from 'fastify-plugin'
 import cors from '@fastify/cors'
-import { type FastifyError } from 'fastify'
-import { type FastifyInstance } from 'fastify/types/instance'
-import { type FastifyPluginOptions } from 'fastify/types/plugin'
-import { serverSetting } from '../../schemas/server.schema'
+import {
+  type FastifyInstance,
+  type FastifyPluginOptions,
+  type FastifyError
+} from 'fastify'
+import { serverSetting } from '../../schemas/server.schema.js'
 
 const { CORS: origin } = serverSetting
 

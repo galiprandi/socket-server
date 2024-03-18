@@ -8,14 +8,14 @@ import fastify, {
 } from 'fastify'
 
 // Plugins
-import socketIoPlugging from './plugins/socketIo'
-import cors from './plugins/cors'
+import webSocket from './plugins/webSocket.js'
+import cors from './plugins/cors.js'
 
 export const createServer = (options?: FastifyServerOptions) => {
   const srv = fastify({ logger: true, ...options })
 
   void srv.register(
-    socketIoPlugging as FastifyPluginCallback<
+    webSocket as FastifyPluginCallback<
       FastifyPluginOptions,
       RawServerDefault,
       FastifyTypeProvider,

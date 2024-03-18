@@ -10,7 +10,7 @@ import {
   type ServerToClientEvents,
   type InterServerEvents,
   type SocketData
-} from '../types/server.types'
+} from '../types/server.types.js'
 
 const fastifyPlugin = (
   fastify: FastifyInstance,
@@ -32,13 +32,13 @@ const fastifyPlugin = (
     done()
   })
 
-  fastify.log.info('🔌 PLugin: Socket.io registered')
+  fastify.log.info('🔌 PLugin: Web Socket registered')
 
   done()
 }
 export default fp(fastifyPlugin, {
   fastify: '>=4.x.x',
-  name: 'socket.io'
+  name: 'web-socket'
 })
 
 declare module 'fastify' {
