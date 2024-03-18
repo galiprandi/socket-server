@@ -1,22 +1,21 @@
 {
   "compilerOptions": {
-    /* Base Options: */
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "strictPropertyInitialization": false,
+    "target": "ES2022",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "incremental": false,
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "target": "es2022",
-    "verbatimModuleSyntax": true,
-    "allowJs": true,
+    "noEmit": false,
     "resolveJsonModule": true,
-    "moduleDetection": "force",
-
-    /* Strictness */
     "strict": true,
-    "noUncheckedIndexedAccess": true,
-
-    /* Bundler Options: */
-    "moduleResolution": "Bundler",
-    "module": "ESNext",
-    "noEmit": true,
-    "lib": ["es2022"]
-  }
+    "noUncheckedIndexedAccess": true
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "src/**/*.js"]
 }
