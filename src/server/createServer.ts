@@ -9,6 +9,7 @@ import fastify, {
 
 // Plugins
 import socketIoPlugging from './plugins/socketIo'
+import cors from './plugins/cors'
 
 export const createServer = (options?: FastifyServerOptions) => {
   const srv = fastify({ logger: true, ...options })
@@ -21,6 +22,8 @@ export const createServer = (options?: FastifyServerOptions) => {
       FastifyBaseLogger
     >
   )
+
+  void srv.register(cors as FastifyPluginCallback)
 
   srv.get('/', (req, res) => {
     void res.send({ status: 'ok' })

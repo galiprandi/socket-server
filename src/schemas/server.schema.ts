@@ -4,6 +4,7 @@ const { string } = z
 const envSchema = z.object({
   PORT: string().default('3000'),
   HOST: string().default('0.0.0.0'),
+  CORS: string().default('*'),
   NODE_ENV: z.enum(['development', 'production', 'test']).default('development')
 })
 
